@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
+             xmlns:control="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
+             x:Class="WheelSpaMobileApp.Views.SignupPage" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF" Title="Sign Up">
+    <ContentPage Title="Personal" BackgroundColor="White">
+        <ScrollView>
+            <StackLayout>
+                <controls:CircleImage Source="icon.png"  Aspect="AspectFill" HeightRequest="180"  Margin="0,20,0,20" />
+                <StackLayout>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="#F1F9FF">
+                    <Label Text="Personal Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                    <Button Image="icon.png" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Title="Vehicle">
+        <ScrollView>
+            <StackLayout BackgroundColor="White">
+                <StackLayout>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,30,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="#F1F9FF">
+                    <Label Text="Vehicle Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Custom Entry"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                    <Button Image="icon.png" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage>
+</TabbedPage>
+    
