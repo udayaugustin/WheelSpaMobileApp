@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
 {
@@ -13,7 +8,7 @@ namespace WheelSpaMobileApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new WheelSpaMobileApp.Views.SignupPage()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+            MainPage = new NavigationPage(new Views.Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
         }
 
         protected override void OnStart()
