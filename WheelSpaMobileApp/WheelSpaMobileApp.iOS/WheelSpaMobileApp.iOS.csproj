@@ -135,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WheelSpaMobileApp\WheelSpaMobileApp.csproj">
-      <Project>{ed94fe10-7d4f-402d-8953-d1a75a4e4c73}</Project>
+      <Project>{04D398A3-6171-4BC6-8D0B-14EEC3E0DDF9}</Project>
       <Name>WheelSpaMobileApp</Name>
     </ProjectReference>
   </ItemGroup>

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Controls\CustomEntry.cs" />
     <Compile Include="Controls\ImageEntry.cs" />
+    <Compile Include="Services\PageService.cs" />
     <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -47,9 +48,15 @@
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SignupPage.xaml.cs">
-      <DependentUpon>SignupPage.xaml</DependentUpon>
+    <Compile Include="Views\AddtionalUserInfo.xaml.cs">
+      <DependentUpon>AddtionalUserInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FacebookProfileCsPage.cs" />
+    <Compile Include="ViewModels\FacebookViewModel.cs" />
+    <Compile Include="Services\FacebookServices.cs" />
+    <Compile Include="Models\FacebookProfile.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="Interfaces\IPageService.cs" />
     <Compile Include="Views\TyreDetail.xaml.cs">
       <DependentUpon>TyreDetail.xaml</DependentUpon>
     </Compile>
@@ -97,9 +104,21 @@
       <HintPath>..\..\packages\Xamarin.Forms.2.3.4.270\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\SignupPage.xaml">
+    <EmbeddedResource Include="Views\AddtionalUserInfo.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

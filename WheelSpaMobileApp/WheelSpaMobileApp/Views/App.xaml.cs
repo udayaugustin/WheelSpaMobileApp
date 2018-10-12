@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
 {
-    public partial class App : Application            
+    public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new WheelSpaMobileApp.Views.TyreDetail()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+            MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
         }
 
         protected override void OnStart()
