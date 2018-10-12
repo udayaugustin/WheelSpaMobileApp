@@ -3,7 +3,7 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:control="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                          
-             x:Class="WheelSpaMobileApp.Views.Login" NavigationPage.HasNavigationBar="False">
+             x:Class="WheelSpaMobileApp.Login" NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -27,12 +27,10 @@
             <Label Text="Continue With"  TextColor="#2699FB"  HorizontalOptions="CenterAndExpand" Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="3"/>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill" HeightRequest="80"  Grid.Row="5"  Grid.Column="0" />-->
             <controls:CircleImage Source="icon.png" Aspect="AspectFill"  HeightRequest="80"  Grid.Row="5"  Grid.Column="1">
-                <controls:CircleImage.GestureRecognizers>                    
+                <controls:CircleImage.GestureRecognizers>
                     <TapGestureRecognizer
-                        Command=""
-                        CommandParameter="Facebook">
-                        
-                    </TapGestureRecognizer>
+                        Command="{Binding AuthenticateViaFacebook}"
+                        CommandParameter="Facebook"/>
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill"  HeightRequest="80"   Grid.Row="5"  Grid.Column="2"/>-->
