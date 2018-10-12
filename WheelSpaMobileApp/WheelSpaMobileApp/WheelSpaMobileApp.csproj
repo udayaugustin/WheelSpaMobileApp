@@ -50,6 +50,16 @@
     <Compile Include="Views\SignupPage.xaml.cs">
       <DependentUpon>SignupPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TyreDetail.xaml.cs">
+      <DependentUpon>TyreDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TyreDetailDetail.xaml.cs">
+      <DependentUpon>TyreDetailDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TyreDetailMaster.xaml.cs">
+      <DependentUpon>TyreDetailMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TyreDetailMenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -90,6 +100,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SignupPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TyreDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TyreDetailMaster.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TyreDetailDetail.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
