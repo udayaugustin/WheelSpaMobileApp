@@ -2221,8 +2221,8 @@ namespace WheelSpaMobileApp.Droid
 			// aapt resource value: 0x7f0200a7
 			public const int notification = 2130837671;
 			
-			// aapt resource value: 0x7f0200b1
-			public const int notification_template_icon_bg = 2130837681;
+			// aapt resource value: 0x7f0200b2
+			public const int notification_template_icon_bg = 2130837682;
 			
 			// aapt resource value: 0x7f0200a8
 			public const int offer = 2130837672;
@@ -2246,10 +2246,13 @@ namespace WheelSpaMobileApp.Droid
 			public const int settings = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int twitter = 2130837679;
+			public const int tick = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int vehicletyre = 2130837680;
+			public const int twitter = 2130837680;
+			
+			// aapt resource value: 0x7f0200b1
+			public const int vehicletyre = 2130837681;
 			
 			static Drawable()
 			{
