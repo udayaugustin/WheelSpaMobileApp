@@ -57,6 +57,9 @@
     <Compile Include="Models\FacebookProfile.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Interfaces\IPageService.cs" />
+    <Compile Include="Views\MercedesBenz.xaml.cs">
+      <DependentUpon>MercedesBenz.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TyreDetail.xaml.cs">
       <DependentUpon>TyreDetail.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\TyreDetailDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\MercedesBenz.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
