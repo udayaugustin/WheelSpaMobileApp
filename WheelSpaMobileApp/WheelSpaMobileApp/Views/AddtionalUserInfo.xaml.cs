@@ -12,9 +12,12 @@ namespace WheelSpaMobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddtionalUserInfo : TabbedPage
     {
-        public AddtionalUserInfo()
-        {
+        public AddtionalUserInfo(FacebookViewModel facebookViewModel)
+        {            
             InitializeComponent();
+
+            BindingContext = new ProfileViewModel(new PageService(), facebookViewModel);
+
         }
     }
 }
