@@ -70,6 +70,7 @@
       <DependentUpon>TyreDetailMaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TyreDetailMenuItem.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">

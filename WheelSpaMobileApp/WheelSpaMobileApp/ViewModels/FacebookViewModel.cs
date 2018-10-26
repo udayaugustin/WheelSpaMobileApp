@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using FacebookLogin.Models;
 using FacebookLogin.Services;
 
-namespace FacebookLogin.ViewModels
+namespace WheelSpaMobileApp
 {
     public class FacebookViewModel : INotifyPropertyChanged
     {
