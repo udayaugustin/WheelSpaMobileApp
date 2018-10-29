@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
+             xmlns:control="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
+             x:Class="WheelSpaMobileApp.ProfileView" Title="Personal" BackgroundColor="White">
+    <ScrollView>
+        <StackLayout>
+            <controls:CircleImage Source="person"  Aspect="AspectFill" HeightRequest="180"  Margin="0,20,0,20" />
+            <StackLayout>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Name}" Placeholder="Full Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.UserName}" Placeholder="Email"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Password}" Placeholder="Password" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+            </StackLayout>
+            <StackLayout BackgroundColor="#F1F9FF">
+                <Label Text="Personal Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Dob}" Placeholder="Date of Birth"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.State}" Placeholder="Country/Region"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Password}" Placeholder="State"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Password}" Placeholder="City"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Password}" Placeholder="Street"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                <Button x:Name="bt" Image="arrow" Clicked="SubmitUserDetails"  Command="" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

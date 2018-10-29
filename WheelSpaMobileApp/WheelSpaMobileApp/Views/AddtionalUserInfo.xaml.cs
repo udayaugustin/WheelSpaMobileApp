@@ -13,11 +13,16 @@ namespace WheelSpaMobileApp
     public partial class AddtionalUserInfo : TabbedPage
     {
         public AddtionalUserInfo(FacebookViewModel facebookViewModel)
-        {            
+        {
             InitializeComponent();
+            
+            this.Children.Add(new ProfileView(facebookViewModel));
+            this.Children.Add(new AddVechicleInfo());
+        }
 
-            BindingContext = new ProfileViewModel(new PageService(), facebookViewModel);
-
+        public void SwitchToVechicleInfoTab()
+        {
+            CurrentPage = Children[1];
         }
     }
 }
