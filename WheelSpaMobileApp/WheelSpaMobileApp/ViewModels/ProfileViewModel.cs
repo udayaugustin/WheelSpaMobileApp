@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Input;
-using Xamarin.Forms;
-using FacebookLogin.Models;
+﻿using FacebookLogin.Models;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace WheelSpaMobileApp
 {
@@ -33,18 +32,55 @@ namespace WheelSpaMobileApp
 
             if (user == null)
             {
-                user = new User();
-
-                user.userName = facebookProfile?.Email;
-                user.Name = facebookProfile?.Name;
-                user.roleId = "2";
-
+                user = new User{userName = facebookProfile?.Email, name = facebookProfile?.Name, roleId = "2", pincode = ""};
             }
         }
 
-        public void CreateUser()
+        public async Task<bool> CreateUser()
         {
-            restServices.AddUser(User);            
+            var validationResult =  await ValidateFields();
+            if(validationResult)
+            {
+                await restServices.AddUser(User);
+                return true;
+            }
+
+            return false;
+        }
+
+        private async Task<bool> ValidateFields()
+        {
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            var alertMessage = "";
+
+            if (string.IsNullOrEmpty(user.userName) || !regex.Match(user.userName).Success)
+            {
+                    alertMessage += "Valid Email Address";
+            }
+
+            if(string.IsNullOrEmpty(user.name))
+            {
+                alertMessage += "Name";
+            }
+
+            if (string.IsNullOrEmpty(user.mobile))
+            {
+                alertMessage += "Mobile No";
+            }
+
+            if (string.IsNullOrEmpty(user.password))
+            {
+                alertMessage += "Password";
+            }
+
+            if(!string.IsNullOrEmpty(alertMessage))
+            {
+                var message = "Please enter " + alertMessage;
+                await pageService.DisplayAlert("Validation Failed", message, "Ok");
+                return false;
+            }
+
+            return true;
         }
 
     }

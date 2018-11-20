@@ -18,12 +18,15 @@ namespace WheelSpaMobileApp
             InitializeComponent();
 		}
 
-        private void SubmitUserDetails(object sender, EventArgs e)
+        private async Task SubmitUserDetails(object sender, EventArgs e)
         {
             var tappedPage = this.Parent as AddtionalUserInfo;
-            tappedPage.SwitchToVechicleInfoTab();
+            var isValidationSuccess = await (BindingContext as ProfileViewModel)?.CreateUser();
+            if (isValidationSuccess)
+            {
+                tappedPage.SwitchToVechicleInfoTab();
+            }
 
-            (BindingContext as ProfileViewModel)?.CreateUser();
         }
     }
 }

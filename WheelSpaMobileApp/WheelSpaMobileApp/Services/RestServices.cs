@@ -18,8 +18,8 @@ namespace WheelSpaMobileApp
         {
             var t1 = JsonConvert.SerializeObject(user);
             var content = new StringContent(JsonConvert.SerializeObject(user));
-            var result = await httpClient.PostAsync(BaseUrl + "/user/add", content);
+            var result = await httpClient.PostAsync(BaseUrl + "user/add", content);
+            //log 
         }
-
     }
 }
