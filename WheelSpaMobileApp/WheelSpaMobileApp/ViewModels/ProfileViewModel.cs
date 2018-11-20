@@ -1,6 +1,7 @@
 ﻿using FacebookLogin.Models;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
 {
@@ -32,17 +33,25 @@ namespace WheelSpaMobileApp
 
             if (user == null)
             {
-                user = new User{userName = facebookProfile?.Email, name = facebookProfile?.Name, roleId = "2", pincode = ""};
+                user = new User { userName = facebookProfile?.Email, name = facebookProfile?.Name, roleId = "2", pincode = "", state = "", city = "", country = "", address = "", dob = "" };
             }
         }
 
         public async Task<bool> CreateUser()
         {
-            var validationResult =  await ValidateFields();
-            if(validationResult)
+            var t = (Application.Current as App).UserAuthToken;
+            var validationResult = await ValidateFields();
+            if (validationResult)
             {
-                await restServices.AddUser(User);
-                return true;
+                ResultData result = await restServices.AddUser(User);
+                if (result.Status == "success")
+                {
+                    (Application.Current as App).UserAuthToken = result.AuthToken;
+                    
+                    return true;
+                }
+
+                await pageService.DisplayAlert(result.Status, result.Message, "Ok");
             }
 
             return false;
@@ -55,10 +64,10 @@ namespace WheelSpaMobileApp
 
             if (string.IsNullOrEmpty(user.userName) || !regex.Match(user.userName).Success)
             {
-                    alertMessage += "Valid Email Address";
+                alertMessage += "Valid Email Address";
             }
 
-            if(string.IsNullOrEmpty(user.name))
+            if (string.IsNullOrEmpty(user.name))
             {
                 alertMessage += "Name";
             }
@@ -73,7 +82,7 @@ namespace WheelSpaMobileApp
                 alertMessage += "Password";
             }
 
-            if(!string.IsNullOrEmpty(alertMessage))
+            if (!string.IsNullOrEmpty(alertMessage))
             {
                 var message = "Please enter " + alertMessage;
                 await pageService.DisplayAlert("Validation Failed", message, "Ok");

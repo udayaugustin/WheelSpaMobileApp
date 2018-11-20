@@ -14,12 +14,17 @@ namespace WheelSpaMobileApp
 
         private HttpClient httpClient = new HttpClient();
 
-        public async Task AddUser(User user)
+        public async Task<ResultData> AddUser(User user)
         {
-            var t1 = JsonConvert.SerializeObject(user);
             var content = new StringContent(JsonConvert.SerializeObject(user));
-            var result = await httpClient.PostAsync(BaseUrl + "user/add", content);
-            //log 
+            var response = await httpClient.PostAsync(BaseUrl + "user/add", content);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());
+                
+            }
+
+            return null;
         }
     }
 }

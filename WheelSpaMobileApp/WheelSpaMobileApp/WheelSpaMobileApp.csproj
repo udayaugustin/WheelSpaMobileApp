@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Controls\CustomEntry.cs" />
     <Compile Include="Controls\ImageEntry.cs" />
+    <Compile Include="Models\ResultData.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\PageService.cs" />
     <Compile Include="Services\RestServices.cs" />

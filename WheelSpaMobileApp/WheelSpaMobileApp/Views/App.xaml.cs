@@ -4,6 +4,8 @@ namespace WheelSpaMobileApp
 {
     public partial class App : Application
     {
+        private const string AuthToken = "AuthToken";
+
         public App()
         {
             InitializeComponent();
@@ -24,6 +26,38 @@ namespace WheelSpaMobileApp
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public string UserAuthToken
+        {
+            get
+            {
+                if (Properties.ContainsKey(AuthToken))
+                {
+                    return Properties[AuthToken].ToString();
+                }
+
+                return string.Empty;
+            }
+
+            set
+            {
+                Properties[AuthToken] = value;
+                Current.SavePropertiesAsync();
+            }
+        }
+
+        public bool IsUserloggedIn
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(UserAuthToken))
+                {
+                    return true;
+                }
+
+                return false;
+            }
         }
     }
 }
