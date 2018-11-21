@@ -33,13 +33,13 @@ namespace WheelSpaMobileApp
 
             if (user == null)
             {
-                user = new User { userName = facebookProfile?.Email, name = facebookProfile?.Name, roleId = "2", pincode = "", state = "", city = "", country = "", address = "", dob = "" };
+                user = new User { UserName = facebookProfile?.Email, Name = facebookProfile?.Name, RoleId = "2", };
+                user.LoginType = (!string.IsNullOrEmpty(facebookProfile?.Email)) ? "facebook" : "manual";
             }
         }
 
         public async Task<bool> CreateUser()
         {
-            var t = (Application.Current as App).UserAuthToken;
             var validationResult = await ValidateFields();
             if (validationResult)
             {
@@ -47,7 +47,7 @@ namespace WheelSpaMobileApp
                 if (result.Status == "success")
                 {
                     (Application.Current as App).UserAuthToken = result.AuthToken;
-                    
+
                     return true;
                 }
 
@@ -62,22 +62,22 @@ namespace WheelSpaMobileApp
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             var alertMessage = "";
 
-            if (string.IsNullOrEmpty(user.userName) || !regex.Match(user.userName).Success)
+            if (string.IsNullOrEmpty(user.UserName) || !regex.Match(user.UserName).Success)
             {
                 alertMessage += "Valid Email Address";
             }
 
-            if (string.IsNullOrEmpty(user.name))
+            if (string.IsNullOrEmpty(user.Name))
             {
                 alertMessage += "Name";
             }
 
-            if (string.IsNullOrEmpty(user.mobile))
+            if (string.IsNullOrEmpty(user.Mobile))
             {
                 alertMessage += "Mobile No";
             }
 
-            if (string.IsNullOrEmpty(user.password))
+            if (string.IsNullOrEmpty(user.Password))
             {
                 alertMessage += "Password";
             }

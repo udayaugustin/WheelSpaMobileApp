@@ -3,26 +3,28 @@ namespace WheelSpaMobileApp
 {
     public class User
     {
-        public string userName { get; set; }
+        public string UserName { get; set; }
 
-        public string password { get; set; }
+        public string Password { get; set; }
 
-        public string roleId { get; set; }
+        public string RoleId { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string mobile { get; set; }
+        public string Mobile { get; set; }
 
-        public string dob { get; set; }
+        public string Dob { get; set; }
 
-        public string state { get; set; }
+        public string State { get; set; }
 
-        public string  city { get; set; }
+        public string  City { get; set; }
 
-        public string address { get; set; }
+        public string Address { get; set; }
 
-        public string pincode { get; set; }
+        public string Pincode { get; set; }
 
-        public string country { get; set; }
+        public string Country { get; set; }
+
+        public string LoginType { get; set; }
     }
 }
