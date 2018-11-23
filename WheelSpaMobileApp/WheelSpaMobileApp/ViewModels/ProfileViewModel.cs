@@ -26,16 +26,23 @@ namespace WheelSpaMobileApp
             }
         }
 
-        public ProfileViewModel(IPageService pageService, FacebookViewModel facebookViewModel)
+        public ProfileViewModel(IPageService pageService, User user, FacebookViewModel facebookViewModel = null)
         {
             this.pageService = pageService;
-            facebookProfile = facebookViewModel.FacebookProfile;
 
-            if (user == null)
+            if (user.UserName == null)
             {
-                user = new User { UserName = facebookProfile?.Email, Name = facebookProfile?.Name, RoleId = "2", };
-                user.LoginType = (!string.IsNullOrEmpty(facebookProfile?.Email)) ? "facebook" : "manual";
+                user.RoleId = "2";
+                if (facebookViewModel != null)
+                {
+                    facebookProfile = facebookViewModel?.FacebookProfile;
+                    user.UserName = facebookProfile?.Email;
+                    user.Name = facebookProfile?.Name;
+                    user.LoginType = "facebook";
+                }                
             }
+
+            this.user = user;
         }
 
         public async Task<bool> CreateUser()

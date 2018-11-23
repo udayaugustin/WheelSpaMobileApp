@@ -54,7 +54,7 @@ namespace WheelSpaMobileApp
 
         private async Task GoToProfilePageAsync(FacebookViewModel vm)
         {
-            await pageService.PushAsync(new AddtionalUserInfo(vm));
+            await pageService.PushAsync(new RegisterationTapView(vm));
         }
 
        

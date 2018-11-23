@@ -8,6 +8,6 @@
 
         public string AuthToken { get; set; }
 
-        public ResultDataUserDetails user_details { get; set; }
+        public ResultDataUserDetails UserDetails { get; set; }
     }
 }

@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace WheelSpaMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddtionalUserInfo : TabbedPage
+    public partial class RegisterationTapView : TabbedPage
     {
-        public AddtionalUserInfo(FacebookViewModel facebookViewModel)
+        public RegisterationTapView(FacebookViewModel facebookViewModel = null)
         {
             InitializeComponent();
-            
-            this.Children.Add(new ProfileView(facebookViewModel));
+
+            this.Children.Add(new ProfileView(new User(), facebookViewModel));
             this.Children.Add(new AddVechicleInfo());
         }
 

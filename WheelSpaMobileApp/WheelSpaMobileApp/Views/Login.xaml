@@ -34,7 +34,7 @@
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill"  HeightRequest="80"   Grid.Row="5"  Grid.Column="2"/>-->
-            <Button Text="Sign Up" Margin="0,30,0,0"  BackgroundColor="#BCE0FD" TextColor="#2699FB" HeightRequest="52" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Button Text="Sign Up" Command="{Binding GoToRegisterPage}" Margin="0,30,0,0"  BackgroundColor="#BCE0FD" TextColor="#2699FB" HeightRequest="52" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="3"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

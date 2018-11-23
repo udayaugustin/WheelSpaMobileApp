@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
              xmlns:control="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
-             x:Class="WheelSpaMobileApp.AddtionalUserInfo" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF" Title="Additional Info"             
+             x:Class="WheelSpaMobileApp.RegisterationTapView" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF" Title="Additional Info"             
             >
     <!--<ContentPage Title="Personal" BackgroundColor="White">
         <ScrollView>
