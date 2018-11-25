@@ -12,9 +12,10 @@ namespace WheelSpaMobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddVechicleInfo : ContentPage
     {
-        public AddVechicleInfo()
+        public AddVechicleInfo(Vehicle vehicle)
         {
             InitializeComponent();
+            BindingContext = new VehicleViewModel(new PageService(), vehicle);
         }
     }
 }

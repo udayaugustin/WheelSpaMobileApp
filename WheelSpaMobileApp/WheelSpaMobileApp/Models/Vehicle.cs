@@ -19,5 +19,7 @@
         public string KmDone { get; set; }
 
         public string AvgDrive { get; set; }
+
+        public string UserId { get; set; }
     }
 }

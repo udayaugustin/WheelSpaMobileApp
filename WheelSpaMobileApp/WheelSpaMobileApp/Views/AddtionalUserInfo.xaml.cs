@@ -17,7 +17,7 @@ namespace WheelSpaMobileApp
             InitializeComponent();
 
             this.Children.Add(new ProfileView(new User(), facebookViewModel));
-            this.Children.Add(new AddVechicleInfo());
+            this.Children.Add(new AddVechicleInfo(new Vehicle()));
         }
 
         public void SwitchToVechicleInfoTab()

@@ -12,7 +12,8 @@ namespace WheelSpaMobileApp
 
             if (IsUserloggedIn)
             {
-                MainPage = new NavigationPage(new Services()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+                //MainPage = new NavigationPage(new Services()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+                MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
             }
             else
             {

@@ -25,7 +25,6 @@ namespace WheelSpaMobileApp
 
             return null;
         }
-        
 
         public async Task<ResultData> AddUser(User user)
         {
@@ -33,13 +32,22 @@ namespace WheelSpaMobileApp
             var response = await httpClient.PostAsync(BaseUrl + "user/add", content);
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());
-                
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());                
             }
 
             return null;
         }
 
+        public async Task<ResultData> AddVehicle(Vehicle vehicle)
+        {
+            var content = new StringContent(JsonConvert.SerializeObject(vehicle));
+            var response = await httpClient.PostAsync(BaseUrl + "vehicle/add", content);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());
+            }
 
+            return null;
+        }
     }
 }

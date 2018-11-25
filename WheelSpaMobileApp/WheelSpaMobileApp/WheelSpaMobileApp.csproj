@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Views\TyreDetailMenuItem.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\VehicleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
