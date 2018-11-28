@@ -5,6 +5,7 @@ namespace WheelSpaMobileApp
     public partial class App : Application
     {
         private const string AuthToken = "AuthToken";
+        public NavigationPage NavigationPage { get; set; }
 
         public App()
         {
@@ -19,7 +20,12 @@ namespace WheelSpaMobileApp
             {
                 MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
             }
-            
+
+            var RootPage = new TyreDetail();
+            RootPage.Master = new TyreDetailMaster();
+            NavigationPage = new NavigationPage(new Login());
+            RootPage.Detail = NavigationPage;
+            MainPage = RootPage;
         }
 
         protected override void OnStart()
@@ -43,7 +49,7 @@ namespace WheelSpaMobileApp
             {
                 if (Properties.ContainsKey(AuthToken))
                 {
-                    return Properties[AuthToken].ToString();
+                    return Properties[AuthToken]?.ToString();
                 }
 
                 return string.Empty;

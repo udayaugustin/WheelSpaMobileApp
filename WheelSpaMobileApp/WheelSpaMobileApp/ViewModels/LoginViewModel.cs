@@ -20,7 +20,7 @@ namespace WheelSpaMobileApp
 
         public LoginViewModel(IPageService pageService)
         {
-            this.pageService = pageService;            
+            this.pageService = pageService;
             restServices = new RestServices();
             User = new User();
 
@@ -31,7 +31,7 @@ namespace WheelSpaMobileApp
 
         private async Task FacebookLoginAsync()
         {
-            await pageService.PushAsync(new FacebookProfileCsPage(pageService));
+            await pageService.PushAsync(new FacebookProfileCsPage(pageService));            
         }
 
         private async Task AuthenticateUser()

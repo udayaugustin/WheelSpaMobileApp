@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
@@ -16,9 +17,16 @@ namespace WheelSpaMobileApp
             await Application.Current.MainPage.DisplayAlert(title, message, cancel);
         }
 
+        public async Task UpdateNavigationPage(Page page)
+        {
+            var firstPage = (Application.Current as App).NavigationPage.Navigation.NavigationStack.First();
+            (Application.Current as App).NavigationPage.Navigation.InsertPageBefore(page, firstPage);
+            await (Application.Current as App).NavigationPage.PopToRootAsync(false);
+        }
+
         public async Task PushAsync(Page page)
         {
-            await Application.Current.MainPage.Navigation.PushAsync(page);
+            await (Application.Current as App).NavigationPage.PushAsync(page);
         }
     }
 }

@@ -5,6 +5,11 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
-
-	</Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CustomHeader" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="Green"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

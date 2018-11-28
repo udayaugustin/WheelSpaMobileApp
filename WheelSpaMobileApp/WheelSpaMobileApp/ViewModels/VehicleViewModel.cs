@@ -45,9 +45,9 @@ namespace WheelSpaMobileApp
         {
             var result = await restServices.AddVehicle(vehicle);
 
-            if(result?.Status == "success")
+            if (result?.Status == "success")
             {
-                await pageService.PushAsync(new Services());
+                await pageService.UpdateNavigationPage(new Services());
             }
         }
     }

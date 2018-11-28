@@ -46,7 +46,7 @@
     <Compile Include="Views\AddVechicleInfo.xaml.cs">
       <DependentUpon>AddVechicleInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\App.xaml.cs">
+    <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
@@ -92,7 +92,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\App.xaml">
+    <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

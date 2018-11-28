@@ -17,7 +17,7 @@ namespace WheelSpaMobileApp
         {
             this.pageService = pageService;
             BindingContext = new FacebookViewModel();
-
+            
             Title = "Facebook Profile";
             BackgroundColor = Color.White;
 

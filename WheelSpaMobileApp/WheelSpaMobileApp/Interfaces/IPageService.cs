@@ -9,5 +9,7 @@ namespace WheelSpaMobileApp
         Task PushAsync(Page page);
 
         Task DisplayAlert(string title, string message, string cancel);
+
+        Task UpdateNavigationPage(Page page);
     }
 }

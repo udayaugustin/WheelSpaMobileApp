@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace WheelSpaMobileApp
@@ -16,8 +10,8 @@ namespace WheelSpaMobileApp
         {
             InitializeComponent();
 
-            this.Children.Add(new ProfileView(new User(), facebookViewModel));
-            this.Children.Add(new AddVechicleInfo(new Vehicle()));
+            Children.Add(new ProfileView(new User(), facebookViewModel));
+            Children.Add(new AddVechicleInfo(new Vehicle()));
         }
 
         public void SwitchToVechicleInfoTab()
