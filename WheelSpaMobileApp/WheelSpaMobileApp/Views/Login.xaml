@@ -21,9 +21,9 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Image Source="logo" Aspect="AspectFill" HeightRequest="172"   VerticalOptions="StartAndExpand" Grid.Row="0"  Grid.ColumnSpan="3"  />
-            <control:ImageEntry LineColor="#2699FB" Image="person_placeholder" Margin="20,10,20,0" Placeholder="Username" x:Name="Username" TextColor="#2699FB" Grid.Row="1"  Grid.Column="0"  Grid.ColumnSpan="3" />
-            <control:ImageEntry LineColor="#2699FB" Image="password_placeholder" Margin="20,0,20,0" Placeholder="Password"  x:Name="Password" TextColor="#2699FB" IsPassword="True" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3"/>
-            <Button Text="Login" BorderRadius="8" Margin="20,10,20,10" Command="{Binding SubmitCommand}" HeightRequest="60" BackgroundColor="#2699FB" TextColor="White"  HorizontalOptions="FillAndExpand" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3"/>
+            <control:ImageEntry LineColor="#2699FB" Image="person_placeholder" Margin="20,10,20,0" Placeholder="Username" x:Name="Username" Text="{Binding User.UserName}" TextColor="#2699FB" Grid.Row="1"  Grid.Column="0"  Grid.ColumnSpan="3" />
+            <control:ImageEntry LineColor="#2699FB" Image="password_placeholder" Margin="20,0,20,0" Placeholder="Password"  x:Name="Password" Text="{Binding User.Password}" TextColor="#2699FB" IsPassword="True" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Button Text="Login" BorderRadius="8" Margin="20,10,20,10" Command="{Binding AuthenticateUserViaManual}" HeightRequest="60" BackgroundColor="#2699FB" TextColor="White"  HorizontalOptions="FillAndExpand" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3"/>
             <Label Text="Continue With"  TextColor="#2699FB"  HorizontalOptions="CenterAndExpand" Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="3"/>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill" HeightRequest="80"  Grid.Row="5"  Grid.Column="0" />-->
             <controls:CircleImage Source="facebook" Aspect="AspectFill"  HeightRequest="80"  Grid.Row="5"  Grid.Column="1">
@@ -34,7 +34,7 @@
                 </controls:CircleImage.GestureRecognizers>
             </controls:CircleImage>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill"  HeightRequest="80"   Grid.Row="5"  Grid.Column="2"/>-->
-            <Button Text="Sign Up" Margin="0,30,0,0"  BackgroundColor="#BCE0FD" TextColor="#2699FB" HeightRequest="52" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Button Text="Sign Up" Command="{Binding GoToRegisterPage}" Margin="0,30,0,0"  BackgroundColor="#BCE0FD" TextColor="#2699FB" HeightRequest="52" VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" Grid.Row="6"  Grid.Column="0" Grid.ColumnSpan="3"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace WheelSpaMobileApp.Views
+namespace WheelSpaMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TyreDetail : MasterDetailPage
@@ -15,6 +15,7 @@ namespace WheelSpaMobileApp.Views
         public TyreDetail()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, true);
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
 

@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using FacebookLogin.ViewModels;
 using Xamarin.Forms;
 using Device = Xamarin.Forms.Device;
 
@@ -18,14 +17,14 @@ namespace WheelSpaMobileApp
         {
             this.pageService = pageService;
             BindingContext = new FacebookViewModel();
-
+            
             Title = "Facebook Profile";
             BackgroundColor = Color.White;
 
             var apiRequest =
                 "https://www.facebook.com/dialog/oauth?client_id="
                 + ClientId
-                + "&display=popup&response_type=token&redirect_uri=https://uthayakumarbooks.com/";
+                + "&display=popup&response_type=token&redirect_uri=https://uthayakumarbooks.com/&scope=email";
 
             var webView = new WebView
             {
@@ -49,13 +48,13 @@ namespace WheelSpaMobileApp
 
                 await vm.SetFacebookUserProfileAsync(accessToken);
                 
-                await GoToProfilePageAsync();
+                await GoToProfilePageAsync(vm);
             }
         }
 
-        private async Task GoToProfilePageAsync()
+        private async Task GoToProfilePageAsync(FacebookViewModel vm)
         {
-            await pageService.PushAsync(new AddtionalUserInfo());
+            await pageService.PushAsync(new RegisterationTapView(vm));
         }
 
        
