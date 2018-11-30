@@ -11,7 +11,7 @@ namespace WheelSpaMobileApp
     {
         public TyreDetailMenuItem()
         {
-            TargetType = typeof(TyreDetailDetail);
+            TargetType = typeof(MasterDetailPage);
         }
         public int Id { get; set; }
         public string Title { get; set; }

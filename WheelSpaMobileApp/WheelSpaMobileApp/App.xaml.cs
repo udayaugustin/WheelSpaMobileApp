@@ -21,8 +21,8 @@ namespace WheelSpaMobileApp
                 MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
             }
 
-            var RootPage = new TyreDetail();
-            RootPage.Master = new TyreDetailMaster();
+            var RootPage = new MasterRootPage();
+            RootPage.Master = new MasterMenuPage();
             NavigationPage = new NavigationPage(new Login());
             RootPage.Detail = NavigationPage;
             MainPage = RootPage;
