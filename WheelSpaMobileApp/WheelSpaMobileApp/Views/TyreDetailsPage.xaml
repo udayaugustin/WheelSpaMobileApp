@@ -6,8 +6,16 @@
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Same Tyres"  BackgroundColor="White">
         <ScrollView>
-               <StackLayout>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+            <StackLayout Padding="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="New"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1"/>
+                </Grid>
+                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
@@ -19,8 +27,17 @@
     </ContentPage>
     <ContentPage Title="Different"  BackgroundColor="White">
         <ScrollView>
-            <StackLayout>
+            <StackLayout  Padding="0,20,0,0">
                 <StackLayout>
+                    <Label Text="Front Tyre" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#2699FB"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="New"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1"/>
+                    </Grid>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
@@ -29,7 +46,15 @@
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Vehicle Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
+                    <Label Text="Rare Tyre" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" FontAttributes="Bold"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Tyres" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" />
+                        <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="New"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1"/>
+                    </Grid>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
