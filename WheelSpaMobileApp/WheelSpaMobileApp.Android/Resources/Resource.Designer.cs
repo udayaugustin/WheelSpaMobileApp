@@ -2227,8 +2227,8 @@ namespace WheelSpaMobileApp.Droid
 			// aapt resource value: 0x7f0200a9
 			public const int notification = 2130837673;
 			
-			// aapt resource value: 0x7f0200b5
-			public const int notification_template_icon_bg = 2130837685;
+			// aapt resource value: 0x7f0200b6
+			public const int notification_template_icon_bg = 2130837686;
 			
 			// aapt resource value: 0x7f0200aa
 			public const int offer = 2130837674;
@@ -2252,16 +2252,19 @@ namespace WheelSpaMobileApp.Droid
 			public const int settings = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int tick = 2130837681;
+			public const int Splash = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int twitter = 2130837682;
+			public const int tick = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int twittericon = 2130837683;
+			public const int twitter = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int vehicletyre = 2130837684;
+			public const int twittericon = 2130837684;
+			
+			// aapt resource value: 0x7f0200b5
+			public const int vehicletyre = 2130837685;
 			
 			static Drawable()
 			{
@@ -3139,8 +3142,8 @@ namespace WheelSpaMobileApp.Droid
 			// aapt resource value: 0x7f0a015a
 			public const int Animation_Design_BottomSheetDialog = 2131362138;
 			
-			// aapt resource value: 0x7f0a0174
-			public const int AppCompatDialogStyle = 2131362164;
+			// aapt resource value: 0x7f0a0177
+			public const int AppCompatDialogStyle = 2131362167;
 			
 			// aapt resource value: 0x7f0a00a5
 			public const int Base_AlertDialog_AppCompat = 2131361957;
@@ -3583,11 +3586,20 @@ namespace WheelSpaMobileApp.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int CardView_Light = 2131361818;
 			
-			// aapt resource value: 0x7f0a0172
-			public const int MainTheme = 2131362162;
+			// aapt resource value: 0x7f0a0175
+			public const int MainTheme = 2131362165;
+			
+			// aapt resource value: 0x7f0a0176
+			public const int MainTheme_Base = 2131362166;
 			
 			// aapt resource value: 0x7f0a0173
-			public const int MainTheme_Base = 2131362163;
+			public const int MyTheme = 2131362163;
+			
+			// aapt resource value: 0x7f0a0172
+			public const int MyTheme_Base = 2131362162;
+			
+			// aapt resource value: 0x7f0a0174
+			public const int MyTheme_Splash = 2131362164;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int Platform_AppCompat = 2131361842;
