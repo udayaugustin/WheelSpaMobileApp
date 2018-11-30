@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace WheelSpaMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TyreDetail : MasterDetailPage
+    public partial class MasterRootPage : Xamarin.Forms.MasterDetailPage
     {
-        public TyreDetail()
+        public MasterRootPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, true);

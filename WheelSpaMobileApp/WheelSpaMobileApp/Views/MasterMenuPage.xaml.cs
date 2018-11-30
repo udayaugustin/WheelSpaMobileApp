@@ -7,22 +7,22 @@ using Xamarin.Forms.Xaml;
 namespace WheelSpaMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TyreDetailMaster : ContentPage
+    public partial class MasterMenuPage : ContentPage
     {
         public ListView ListView;
 
-        public TyreDetailMaster()
+        public MasterMenuPage()
         {
             InitializeComponent();
-            BindingContext = new TyreDetailMasterViewModel();
+            BindingContext = new MasterMenuPageViewModel();
             ListView = MenuItemsListView;
         }
 
-        class TyreDetailMasterViewModel : INotifyPropertyChanged
+        class MasterMenuPageViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<TyreDetailMenuItem> MenuItems { get; set; }
 
-            public TyreDetailMasterViewModel()
+            public MasterMenuPageViewModel()
             {
                 MenuItems = new ObservableCollection<TyreDetailMenuItem>(new[]
                 {
