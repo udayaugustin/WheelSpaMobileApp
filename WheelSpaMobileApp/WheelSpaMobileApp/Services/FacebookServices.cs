@@ -21,6 +21,7 @@ namespace FacebookLogin.Services
 
             var httpClient = new HttpClient();
 
+
             var userJson = await httpClient.GetStringAsync(requestUrl);
 
             var facebookProfile = JsonConvert.DeserializeObject<FacebookProfile>(userJson);

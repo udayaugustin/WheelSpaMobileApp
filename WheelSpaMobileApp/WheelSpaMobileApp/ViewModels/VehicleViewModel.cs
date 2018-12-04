@@ -108,10 +108,11 @@ namespace WheelSpaMobileApp
                 errorMessage += "Avg Drive";
             }
 
-            if (string.IsNullOrEmpty(errorMessage))
+            if (!string.IsNullOrEmpty(errorMessage))
+            {
+                alertMessage = "Please enter " + errorMessage + " of the vehicle";
                 return false;
-
-            alertMessage = "Please enter "+ errorMessage + " of the vehicle";
+            }                
 
             return true;
         }

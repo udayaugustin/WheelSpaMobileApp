@@ -7,6 +7,7 @@ namespace WheelSpaMobileApp
         private const string AuthToken = "AuthToken";
         public NavigationPage NavigationPage { get; set; }
 
+
         public App()
         {
             InitializeComponent();

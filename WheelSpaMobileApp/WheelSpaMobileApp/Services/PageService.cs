@@ -1,5 +1,7 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Threading.Tasks;
+using WheelSpaMobileApp.Views;
 using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
@@ -17,16 +19,27 @@ namespace WheelSpaMobileApp
             await Application.Current.MainPage.DisplayAlert(title, message, cancel);
         }
 
-        public async Task UpdateNavigationPage(Page page)
+        public void PushAsMainPage(Page page)
         {
-            var firstPage = (Application.Current as App).NavigationPage.Navigation.NavigationStack.First();
-            (Application.Current as App).NavigationPage.Navigation.InsertPageBefore(page, firstPage);
-            await (Application.Current as App).NavigationPage.PopToRootAsync(false);
+            //var rootPage = new Mas();
+            //rootPage.Master = new TyreDetailMaster();
+            //(Application.Current as App).NavigationPage = new NavigationPage(new TyreDetailDetail());
+            //rootPage.Detail = (Application.Current as App).NavigationPage;
+            //Application.Current.MainPage = rootPage;
         }
 
         public async Task PushAsync(Page page)
         {
             await (Application.Current as App).NavigationPage.PushAsync(page);
+        }
+
+        public async Task UpdateNavigationPage(Page page)
+        {
+            var app = (Application.Current as App);
+            var servicePage = new Services();
+            var homePage = app.NavigationPage.Navigation.NavigationStack.First();
+            app.NavigationPage.Navigation.InsertPageBefore(servicePage, homePage);
+            await app.NavigationPage.PopToRootAsync(false);
         }
     }
 }

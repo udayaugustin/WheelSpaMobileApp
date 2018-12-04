@@ -32,7 +32,7 @@ namespace WheelSpaMobileApp
             var response = await httpClient.PostAsync(BaseUrl + "user/add", content);
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());                
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result);                
             }
 
             return null;
@@ -44,7 +44,7 @@ namespace WheelSpaMobileApp
             var response = await httpClient.PostAsync(BaseUrl + "vehicle/add", content);
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result.ToString());
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result);
             }
 
             return null;

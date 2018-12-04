@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using WheelSpaMobileApp.Views;
 
 namespace WheelSpaMobileApp
 {
