@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using WheelSpaMobileApp.Views;
 
 namespace WheelSpaMobileApp
 {
@@ -11,6 +12,7 @@ namespace WheelSpaMobileApp
         public App()
         {
             InitializeComponent();
+            //MainPage = new NavigationPage(new TyreDetailsPage());
 
             if (IsUserloggedIn)
             {
