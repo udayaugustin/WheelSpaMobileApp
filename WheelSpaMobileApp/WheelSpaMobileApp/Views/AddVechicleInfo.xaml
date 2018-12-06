@@ -8,12 +8,12 @@
     <ScrollView>
         <StackLayout BackgroundColor="White">
             <StackLayout>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding Vehicle.VehicleBrand}" Placeholder="Vehicle Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,30,20,10"/>
+                <custom:CustomEntry Text="{Binding Vehicle.VehicleBrand}" Placeholder="Vehicle Brand" Style="{StaticResource AddVehicleCustomEntryStyle}"/>
                 <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" Text="{Binding Vehicle.VehicleName}" Placeholder="Vehicle Name" />
                 <custom:CustomEntry Style="{StaticResource ProfileViewCustomEntryStyle}" Text="{Binding Vehicle.VehicleVersion}" Placeholder="Vehicle Version"/>
             </StackLayout>
             <StackLayout BackgroundColor="#F1F9FF">
-                <Label Text="Vehicle Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
+                <Label Text="Vehicle Information" Style="{StaticResource VehicleInfoLableStyle}"/>
                 <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding Vehicle.VehicleNo}" Placeholder="Vehicle Number"/>
                 <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding Vehicle.YearPurchase}" Placeholder="Year of Purchase"/>
                 <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB"  Text="{Binding Vehicle.KmDone}" Placeholder="K.M car done so far" />
