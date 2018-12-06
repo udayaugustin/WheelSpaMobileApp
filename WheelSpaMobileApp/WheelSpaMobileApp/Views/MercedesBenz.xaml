@@ -6,11 +6,11 @@
     <ContentPage.Content>
         <StackLayout  BackgroundColor="#F1F9FF">
             <Label Text="TN 00 AP 0000" Style="{StaticResource BenzLableStyle}"/>
-            <custom:CustomEntry Placeholder="Total k.m done"  Style="{StaticResource CustomEntryStyle}"/>
-            <custom:CustomEntry Placeholder="Wheel alignment" Style="{StaticResource CustomEntryStyle}"/>
-            <custom:CustomEntry Placeholder="Wheel Balance" Style="{StaticResource CustomEntryStyle}"/>
-            <custom:CustomEntry Placeholder="Rare Tyre" Style="{StaticResource CustomEntryStyle}"/>
-            <custom:CustomEntry Placeholder="Front Tyre" Style="{StaticResource CustomEntryStyle}"/>
+            <custom:CustomEntry Placeholder="Total k.m done"  Style="{StaticResource CustomEntryStyle}" BorderColor="#BCE0FD" />
+            <custom:CustomEntry Placeholder="Wheel alignment" Style="{StaticResource CustomEntryStyle}" BorderColor="#BCE0FD"/>
+            <custom:CustomEntry Placeholder="Wheel Balance" Style="{StaticResource CustomEntryStyle}"  BorderColor="#BCE0FD"/>
+            <custom:CustomEntry Placeholder="Rare Tyre" Style="{StaticResource CustomEntryStyle}" BorderColor="#BCE0FD"/>
+            <custom:CustomEntry Placeholder="Front Tyre" Style="{StaticResource CustomEntryStyle}" BorderColor="#BCE0FD"/>
             <Button Text="save" Style="{StaticResource BenzSaveButtonStyle}"/>
         </StackLayout>
     </ContentPage.Content>

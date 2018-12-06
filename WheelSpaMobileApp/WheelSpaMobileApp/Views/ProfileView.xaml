@@ -7,21 +7,21 @@
              x:Class="WheelSpaMobileApp.ProfileView" Title="Personal" BackgroundColor="White">
     <ScrollView>
         <StackLayout>
-            <controls:CircleImage Source="person"  Aspect="AspectFill" HeightRequest="180"  Margin="0,20,0,20" />
+            <controls:CircleImage Source="person"  Style="{StaticResource ProfilePersonIconStyle}" />
             <StackLayout>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Name}" Placeholder="Full Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.UserName}" Placeholder="Email"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Password}" Placeholder="Password" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Mobile}" Placeholder="Mobile No"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding User.Name}" Placeholder="Full Name"/>
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB"  Text="{Binding User.UserName}" Placeholder="Email"/>
+                <custom:CustomEntry Style="{StaticResource ProfileViewCustomEntryStyle}" Text="{Binding User.Password}" Placeholder="Password" IsPassword="True"/>
+                <custom:CustomEntry Style="{StaticResource ProfileViewCustomEntryStyle}" Text="{Binding User.Mobile}" Placeholder="Mobile No"  />
             </StackLayout>
             <StackLayout BackgroundColor="#F1F9FF">
                 <Label Text="Personal Information" HorizontalOptions="CenterAndExpand" Margin="0,30,0,20" TextColor="#2699FB" FontAttributes="Bold"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Dob}" Placeholder="Date of Birth"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Country}" Placeholder="Country/Region"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.State}" Placeholder="State"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.City}" Placeholder="City"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Text="{Binding User.Address}" Placeholder="Street"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,30"/>
-                <Button x:Name="bt" Image="arrow" Clicked="SubmitUserDetails"  Command="{Binding Comm}" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding User.Dob}" Placeholder="Date of Birth"/>
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding User.Country}" Placeholder="Country/Region"/>
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding User.State}" Placeholder="State" />
+                <custom:CustomEntry Style="{StaticResource CustomEntryStyle}" BorderColor="#2699FB" Text="{Binding User.City}" Placeholder="City"/>
+                <custom:CustomEntry Style="{StaticResource ProfileViewCustomEntryStyle}" Text="{Binding User.Address}" Placeholder="Street"/>
+                <Button x:Name="bt" Image="arrow" Clicked="SubmitUserDetails"  Command="{Binding Comm}" Style="{StaticResource ProfieNxtBtStyle}"/>
             </StackLayout>
         </StackLayout>
     </ScrollView>
