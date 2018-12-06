@@ -12,7 +12,7 @@ namespace WheelSpaMobileApp
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage(new TyreDetailsPage());
+             //MainPage = new NavigationPage(new TyreDetailsPage());
 
             if (IsUserloggedIn)
             {
