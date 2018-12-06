@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
              x:Class="WheelSpaMobileApp.Views.MercedesBenz" Title="Mercedes-Benz GLA">
     <ContentPage.Content>
         <StackLayout  BackgroundColor="#F1F9FF">
-            <Label Text="TN 00 AP 0000" VerticalOptions="StartAndExpand" TextColor="White" HorizontalTextAlignment="Center" FontSize="18" HorizontalOptions="FillAndExpand" BackgroundColor="#2699FB" HeightRequest="80" />
-            <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#BCE0FD" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Total k.m done"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" BackgroundColor="White"/>
-            <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#BCE0FD" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Wheel alignment"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" BackgroundColor="White"/>
-            <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#BCE0FD" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Wheel Balance"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" BackgroundColor="White"/>
-            <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#BCE0FD" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rare Tyre"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" BackgroundColor="White"/>
-            <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#BCE0FD" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Front Tyre"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" BackgroundColor="White"/>
-            <Button Text="save" TextColor="#2699FB" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Margin="0"/>
+            <Label Text="TN 00 AP 0000" Style="{StaticResource BenzLableStyle}"/>
+            <custom:CustomEntry Placeholder="Total k.m done"  Style="{StaticResource CustomEntryStyle}"/>
+            <custom:CustomEntry Placeholder="Wheel alignment" Style="{StaticResource CustomEntryStyle}"/>
+            <custom:CustomEntry Placeholder="Wheel Balance" Style="{StaticResource CustomEntryStyle}"/>
+            <custom:CustomEntry Placeholder="Rare Tyre" Style="{StaticResource CustomEntryStyle}"/>
+            <custom:CustomEntry Placeholder="Front Tyre" Style="{StaticResource CustomEntryStyle}"/>
+            <Button Text="save" Style="{StaticResource BenzSaveButtonStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
