@@ -2,7 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
-             x:Class="WheelSpaMobileApp.Views.TyreDetailsPage" Title="Tire Detail" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF">
+             x:Class="WheelSpaMobileApp.TyreDetailsPage" Title="Tire Detail" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF">
   <!--Pages can be added as references or inline-->
     <ContentPage Title="Same Tyres"  BackgroundColor="White">
         <ScrollView>
@@ -24,12 +24,12 @@
 </Picker>
                 
                 </Grid>
-                <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.RimSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding SameTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <Button Image="arrow" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
                 </StackLayout>
         </ScrollView>
@@ -55,12 +55,12 @@
   </Picker.Items>
 </Picker>
                     </Grid>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.RimSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Rare Tyre" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" FontAttributes="Bold"/>
@@ -80,12 +80,12 @@
   </Picker.Items>
 </Picker>
                     </Grid>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
-                    <custom:CustomEntry CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.RimSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <Button Image="arrow" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
                 </StackLayout>
             </StackLayout>

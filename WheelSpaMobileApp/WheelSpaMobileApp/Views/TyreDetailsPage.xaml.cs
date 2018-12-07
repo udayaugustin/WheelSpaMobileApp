@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace WheelSpaMobileApp.Views
+namespace WheelSpaMobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TyreDetailsPage : TabbedPage
@@ -15,6 +15,7 @@ namespace WheelSpaMobileApp.Views
         public TyreDetailsPage()
         {
             InitializeComponent();
+            BindingContext = new TyreViewModel();
         }
     }
 }

@@ -46,7 +46,7 @@
     <Compile Include="Views\AddVechicleInfo.xaml.cs">
       <DependentUpon>AddVechicleInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Views\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
@@ -89,13 +89,16 @@
     <Compile Include="Views\TyreDetailsPage.xaml.cs">
       <DependentUpon>TyreDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Tyre.cs" />
+    <Compile Include="Models\DifferentTypeTyre.cs" />
+    <Compile Include="ViewModels\TyreViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="App.xaml">
+    <EmbeddedResource Include="Views\App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

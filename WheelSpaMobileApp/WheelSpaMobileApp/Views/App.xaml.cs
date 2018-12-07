@@ -14,21 +14,23 @@ namespace WheelSpaMobileApp
             InitializeComponent();
              //MainPage = new NavigationPage(new TyreDetailsPage());
 
-            if (IsUserloggedIn)
-            {
-                //MainPage = new NavigationPage(new Services()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
-                MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
-            }
-            else
-            {
-                MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
-            }
+            //if (IsUserloggedIn)
+            //{
+            //    //MainPage = new NavigationPage(new Services()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+            //    MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+            //}
+            //else
+            //{
+            //    MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#2699FB"), BarTextColor = Color.White };
+            //}
 
-            var RootPage = new MasterRootPage();
-            RootPage.Master = new MasterMenuPage();
-            NavigationPage = new NavigationPage(new Login());
-            RootPage.Detail = NavigationPage;
-            MainPage = RootPage;
+            //var RootPage = new MasterRootPage();
+            //RootPage.Master = new MasterMenuPage();
+            //NavigationPage = new NavigationPage(new Login());
+            //RootPage.Detail = NavigationPage;
+            //MainPage = RootPage;
+
+            MainPage = new NavigationPage(new TyreDetailsPage());
         }
 
         protected override void OnStart()
