@@ -119,6 +119,19 @@
                 <Setter Property="WidthRequest" Value="70"/>
                 <Setter Property="Margin" Value="20,30,20,10"/>
             </Style>
+                 <Style x:Key="TyreDetailCustomEntryStyle" TargetType="custom:CustomEntry">
+                <Setter Property="TextColor" Value="#2699FB"/>
+                <Setter Property="HorizontalTextAlignment" Value="Start"/>
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="HeightRequest" Value="50"/>
+                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="Margin" Value="20,0,20,10"/>
+                <Setter Property="PlaceholderColor" Value="#2699FB"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="IsCurvedCornersEnabled" Value="True"/>
+                <Setter Property="BorderColor" Value="#2699FB"/>
+            </Style>
 </ResourceDictionary>
     </Application.Resources>
 </Application>

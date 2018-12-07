@@ -24,6 +24,7 @@
 </Picker>
                 
                 </Grid>
+<<<<<<< HEAD
                     <custom:CustomEntry Text="{Binding SameTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding SameTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding SameTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
@@ -31,6 +32,15 @@
                     <custom:CustomEntry Text="{Binding SameTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding SameTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <Button Image="arrow" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+=======
+                <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}" Placeholder="Tyre Brand" />
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name" />
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Size" IsPassword="True"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Rim Size" />
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase" />
+                    <Button Image="arrow" Style="{StaticResource ProfieNxtBtStyle}"/>
+>>>>>>> e1dff00... Modified Tyredetail page design Fine tuning
                 </StackLayout>
         </ScrollView>
     </ContentPage>
@@ -55,12 +65,21 @@
   </Picker.Items>
 </Picker>
                     </Grid>
+<<<<<<< HEAD
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.RimSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Rim Size"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
+=======
+                    <custom:CustomEntry  Placeholder="Tyre Brand" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry  Placeholder="Tyre Name" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry  Placeholder="Tyre Size" IsPassword="True" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry  Placeholder="Rim Size" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry  Placeholder="Tyre Life Remaining" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry  Placeholder="Date of purchase" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+>>>>>>> e1dff00... Modified Tyredetail page design Fine tuning
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Rare Tyre" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" FontAttributes="Bold"/>
@@ -80,6 +99,7 @@
   </Picker.Items>
 </Picker>
                     </Grid>
+<<<<<<< HEAD
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Name}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Name"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreSize}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Size" IsPassword="True" PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
@@ -87,8 +107,17 @@
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreLife}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Life Remaining"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.DateOfPurchase}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Date of purchase"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
                     <Button Image="arrow" BackgroundColor="#CCCCCC" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0"/>
+=======
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Brand"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Size" IsPassword="True"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Rim Size"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
+                    <custom:CustomEntry Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase"/>
+                    <Button Image="arrow" Style="{StaticResource ProfieNxtBtStyle}"/>
+>>>>>>> e1dff00... Modified Tyredetail page design Fine tuning
                 </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage>
-</TabbedPage>
+</TabbedPage>                                                                                                                                        
