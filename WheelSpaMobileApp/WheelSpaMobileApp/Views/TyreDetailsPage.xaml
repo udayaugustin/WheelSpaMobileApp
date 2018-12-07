@@ -22,7 +22,6 @@
     <x:String>Fifth</x:String>    
   </Picker.Items>
 </Picker>
-                
                 </Grid>
 <<<<<<< HEAD
                     <custom:CustomEntry Text="{Binding SameTyre.Brand}" CornerRadius="0" IsCurvedCornersEnabled="True" BorderColor="#2699FB" HorizontalTextAlignment="Start" FontSize="17" HeightRequest="50" Placeholder="Tyre Brand"  PlaceholderColor="#2699FB" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10"/>
