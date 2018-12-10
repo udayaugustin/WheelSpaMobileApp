@@ -14,8 +14,6 @@
 
         public string TyreLife { get; set; }
 
-        public string DateOfPurchase { get; set; }
-
-        public string DateOfPurchase { get; set; }
+        public string DateOfPurchase { get; set; }        
     }
 }
