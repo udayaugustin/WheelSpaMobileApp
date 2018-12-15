@@ -5,6 +5,5 @@
         public Tyre FrontTyre { get; set; }
 
         public Tyre RearTyre { get; set; }
-
     }
 }

@@ -2,7 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:custom="clr-namespace:WheelSpaMobileApp.Controls;assembly=WheelSpaMobileApp"
-             x:Class="WheelSpaMobileApp.TyreDetailsPage" Title="Tire Detail" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF">
+             x:Class="WheelSpaMobileApp.TyreDetailsPage" Title="Tyre Detail" NavigationPage.HasBackButton="True"  BarBackgroundColor ="#2699FB" BackgroundColor="#2699FB" NavigationPage.HasNavigationBar="True" BarTextColor="#FFFFFF">
     <ContentPage Title="Same Tyres"  BackgroundColor="White">
         <ScrollView>
             <StackLayout Padding="0,20,0,0">
@@ -12,20 +12,16 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                    <Picker HeightRequest="50" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
-                        <Picker.Items>
-                            <x:String>New</x:String>
-                            <x:String>Old</x:String>
-                        </Picker.Items>
+                    <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                     </Picker>
                 </Grid>
-                <custom:CustomEntry Text="{Binding SameTyre.Brand}"  Style="{StaticResource TyreDetailCustomEntryStyle}" Placeholder="Tyre Brand" />
-                <custom:CustomEntry Text="{Binding SameTyre.Name}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name" />
+                <custom:CustomEntry Text="{Binding SameTyre.TyreBrand}"  Style="{StaticResource TyreDetailCustomEntryStyle}" Placeholder="Tyre Brand" />
+                <custom:CustomEntry Text="{Binding SameTyre.TyreName}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name" />
                 <custom:CustomEntry Text="{Binding SameTyre.TyreSize}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Size" IsPassword="True"/>
                 <custom:CustomEntry Text="{Binding SameTyre.RimSize}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Rim Size" />
                 <custom:CustomEntry Text="{Binding SameTyre.TyreLife}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
                 <custom:CustomEntry Text="{Binding SameTyre.DateOfPurchase}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase" />
-                <Button Image="arrow" Command="{Binding SubmitCommand}" Style="{StaticResource ProfieNxtBtStyle}"/>
+                <Button Image="arrow" Command="{Binding SubmitCommand}" CommandParameter="Same" Style="{StaticResource ProfieNxtBtStyle}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage>
@@ -40,15 +36,11 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                        <Picker HeightRequest="50" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
-                            <Picker.Items>
-                                <x:String>New</x:String>
-                                <x:String>Old</x:String>
-                            </Picker.Items>
+                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                         </Picker>
                     </Grid>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Brand}"  Placeholder="Tyre Brand" Style="{StaticResource TyreDetailCustomEntryStyle}" />
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.Name}" Placeholder="Tyre Name" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreBrand}"  Placeholder="Tyre Brand" Style="{StaticResource TyreDetailCustomEntryStyle}" />
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreName}" Placeholder="Tyre Name" Style="{StaticResource TyreDetailCustomEntryStyle}" />
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreSize}" Placeholder="Tyre Size" IsPassword="True" Style="{StaticResource TyreDetailCustomEntryStyle}" />
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.RimSize}" Placeholder="Rim Size" Style="{StaticResource TyreDetailCustomEntryStyle}" />
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreLife}" Placeholder="Tyre Life Remaining" Style="{StaticResource TyreDetailCustomEntryStyle}" />
@@ -62,20 +54,16 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tyres" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" />
-                        <Picker HeightRequest="50" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
-                            <Picker.Items>
-                                <x:String>New</x:String>
-                                <x:String>Old</x:String>
-                            </Picker.Items>
+                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                         </Picker>
                     </Grid>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Brand"/>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name"/>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Size" IsPassword="True"/>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Rim Size"/>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
-                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.Brand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase"/>
-                    <Button Image="arrow" Command="{Binding SubmitCommand}" Style="{StaticResource ProfieNxtBtStyle}"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreBrand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Brand"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreName}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Name"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreSize}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Size" IsPassword="True"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.RimSize}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Rim Size"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreLife}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
+                    <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.DateOfPurchase}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase"/>
+                    <Button Image="arrow" Command="{Binding SubmitCommand}" CommandParameter="Different" Style="{StaticResource ProfieNxtBtStyle}"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

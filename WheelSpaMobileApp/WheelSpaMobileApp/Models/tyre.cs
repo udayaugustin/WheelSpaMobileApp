@@ -2,11 +2,11 @@
 {
     public class Tyre
     {
-        public string TyreType { get; set; }
+        public string TyreStatus { get; set; }
+        
+        public string TyreBrand { get; set; }
 
-        public string Brand { get; set; }
-
-        public string Name { get; set; }
+        public string TyreName { get; set; }
 
         public string TyreSize { get; set; }
 

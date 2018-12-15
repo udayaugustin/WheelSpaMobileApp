@@ -46,16 +46,10 @@ namespace WheelSpaMobileApp
             return null;
         }
 
-        public async Task<ResultData> AddTyreInfo(DifferentTypeTyre tyre)
+        public async Task<ResultData> AddTyreInfo(string tyreDetails)
         {
-            string VehicleId = "1";
-            var json = JsonConvert.SerializeObject(new
-            {
-                tyre,
-                VehicleId
-            });
-            var content = new StringContent(json);
-            
+            var content = new StringContent(tyreDetails);
+
             var response = await httpClient.PostAsync(BaseUrl + "tyre/add", content);
             if (response.IsSuccessStatusCode)
             {
