@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using Newtonsoft.Json;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WheelSpaMobileApp
@@ -32,7 +28,7 @@ namespace WheelSpaMobileApp
             var response = await httpClient.PostAsync(BaseUrl + "user/add", content);
             if (response.IsSuccessStatusCode)
             {
-                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result);                
+                return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result);
             }
 
             return null;
@@ -50,10 +46,17 @@ namespace WheelSpaMobileApp
             return null;
         }
 
-        public async Task<ResultData> AddTyreInfo(Tyre tyre)
+        public async Task<ResultData> AddTyreInfo(DifferentTypeTyre tyre)
         {
-            var content = new StringContent(JsonConvert.SerializeObject(tyre));
-            var response = await httpClient.PostAsync(BaseUrl + "vehicle/add", content);
+            string VehicleId = "1";
+            var json = JsonConvert.SerializeObject(new
+            {
+                tyre,
+                VehicleId
+            });
+            var content = new StringContent(json);
+            
+            var response = await httpClient.PostAsync(BaseUrl + "tyre/add", content);
             if (response.IsSuccessStatusCode)
             {
                 return JsonConvert.DeserializeObject<ResultData>(response.Content.ReadAsStringAsync().Result);
