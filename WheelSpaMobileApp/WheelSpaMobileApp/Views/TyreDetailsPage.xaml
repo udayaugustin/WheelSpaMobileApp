@@ -11,8 +11,17 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <Label Text="Select Vehcile" Grid.Column="0" TextColor="#2699FB" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                    <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SameTypeTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
+                    </Picker>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                     <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                    <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
+                    <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SameTypeTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                     </Picker>
                 </Grid>
                 <custom:CustomEntry Text="{Binding SameTyre.TyreBrand}"  Style="{StaticResource TyreDetailCustomEntryStyle}" Placeholder="Tyre Brand" />
@@ -36,7 +45,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tyres" Grid.Column="0" TextColor="#2699FB" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
+                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding DifferentTypeFrontTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                         </Picker>
                     </Grid>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.FrontTyre.TyreBrand}"  Placeholder="Tyre Brand" Style="{StaticResource TyreDetailCustomEntryStyle}" />
@@ -54,7 +63,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Text="Tyres" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="#2699FB" />
-                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SelectedTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
+                        <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding DifferentTypeRearTyreStatus, Mode=TwoWay}"  TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                         </Picker>
                     </Grid>
                     <custom:CustomEntry Text="{Binding DifferentTypeTyre.RearTyre.TyreBrand}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Brand"/>

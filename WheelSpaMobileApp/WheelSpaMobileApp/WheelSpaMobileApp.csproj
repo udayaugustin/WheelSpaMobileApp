@@ -35,6 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\CommonObjects.cs" />
     <Compile Include="Controls\CustomEntry.cs" />
     <Compile Include="Controls\ImageEntry.cs" />
     <Compile Include="Models\DifferentTypeTyre.cs" />

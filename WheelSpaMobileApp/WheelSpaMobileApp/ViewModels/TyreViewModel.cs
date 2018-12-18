@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -10,7 +11,10 @@ namespace WheelSpaMobileApp
     public class TyreViewModel : INotifyPropertyChanged
     {
         private RestServices restServices;
-        private string selectedTyreStatus;
+        private string sameTypeTyreStatus;
+        private string differentTypeFrontTyreStatus;
+        private string differentTypeRearTyreStatus;
+        private List<Vehicle> vehicleList;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -20,24 +24,68 @@ namespace WheelSpaMobileApp
 
         public List<string> TyreStatusList { get; set; }
 
-        public string SelectedTyreStatus
+        public string SameTypeTyreStatus
         {
             get
             {
-                return selectedTyreStatus;
+                return sameTypeTyreStatus;
             }
             set
             {
-                selectedTyreStatus = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedTyreStatus)));
+                sameTypeTyreStatus = value;
+                OnPropertyChanged();
             }
+        }
+
+        public string DifferentTypeFrontTyreStatus
+        {
+            get
+            {
+                return differentTypeFrontTyreStatus;
+            }
+            set
+            {
+                differentTypeFrontTyreStatus = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DifferentTypeRearTyreStatus
+        {
+            get
+            {
+                return differentTypeRearTyreStatus;
+            }
+            set
+            {
+                differentTypeRearTyreStatus = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public List<Vehicle> VehicleList
+        {
+            get
+            {
+                return vehicleList;
+            }
+            set
+            {
+                vehicleList = value;
+                OnPropertyChanged();
+            }            
         }
 
         public ICommand SubmitCommand { get; set; }
 
-        public TyreViewModel(IPageService pageService)
+        public TyreViewModel(IPageService pageService, string authToken)
         {
             restServices = new RestServices();
+            Task.Run(async () =>
+            {
+                vehicleList = await restServices.GetVehicleList("orqg9711");
+            });
+            
             SameTyre = new Tyre();
             DifferentTypeTyre = new DifferentTypeTyre
             {
@@ -46,8 +94,8 @@ namespace WheelSpaMobileApp
             };
             TyreStatusList = new List<string>()
             {
-                "New",
-                "Old"
+                CommonConstants.NewTyreType,
+                CommonConstants.OldTyreType
             };
 
             SubmitCommand = new Command<string>(async (type) => await Submit(type));
@@ -59,9 +107,9 @@ namespace WheelSpaMobileApp
             string AuthToken = (Application.Current as App).UserAuthToken;
             string TyreType = type;
             string jsonData = string.Empty;
-            if (type == "Same")
+            if (type == CommonConstants.SameTypeTyre)
             {
-                SameTyre.TyreStatus = SelectedTyreStatus;
+                SameTyre.TyreStatus = SameTypeTyreStatus;
                 jsonData = JsonConvert.SerializeObject(
                     new
                     {
@@ -73,8 +121,8 @@ namespace WheelSpaMobileApp
             }
             else
             {
-                DifferentTypeTyre.FrontTyre.TyreStatus = SelectedTyreStatus;
-                DifferentTypeTyre.RearTyre.TyreStatus = selectedTyreStatus;
+                DifferentTypeTyre.FrontTyre.TyreStatus = DifferentTypeFrontTyreStatus;
+                DifferentTypeTyre.RearTyre.TyreStatus = DifferentTypeRearTyreStatus;
                 jsonData = JsonConvert.SerializeObject(
                     new
                     {
@@ -86,11 +134,15 @@ namespace WheelSpaMobileApp
             }
 
             var result = await restServices.AddTyreInfo(jsonData);
-            if (result.Status == "Success")
+            if (result.Status == CommonConstants.SuccessStatus)
             {
 
             }
         }
 
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace WheelSpaMobileApp
 {
@@ -57,6 +58,15 @@ namespace WheelSpaMobileApp
             }
 
             return null;
+        }
+
+        public async Task<List<Vehicle>> GetVehicleList(string authToken)
+        {
+            var content = await httpClient.GetStringAsync(BaseUrl + "vehicle/get?AuthToken=" + authToken);
+            System.Diagnostics.Debug.WriteLine(content);
+            var vehicleList = JsonConvert.DeserializeObject<List<Vehicle>>(content);
+            System.Diagnostics.Debug.WriteLine(vehicleList);
+            return vehicleList;
         }
     }
 }

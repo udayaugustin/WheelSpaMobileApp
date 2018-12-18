@@ -15,7 +15,7 @@ namespace WheelSpaMobileApp
         public TyreDetailsPage()
         {
             InitializeComponent();
-            BindingContext = new TyreViewModel(new PageService());
+            BindingContext = new TyreViewModel(new PageService(), (Application.Current as App).UserAuthToken);
         }
     }
 }
