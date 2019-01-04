@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WheelSpaMobileApp.VehicleList">
+    <Grid>
+        <ListView ItemsSource="{Binding VehicleList}" SelectedItem="{Binding SelectedVehicle}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding VehicleNo}" CommandParameter="{Binding .}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>            
+        </ListView>    
+    </Grid>
+</ContentPage>

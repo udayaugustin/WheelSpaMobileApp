@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -15,6 +16,8 @@ namespace WheelSpaMobileApp
         private string differentTypeFrontTyreStatus;
         private string differentTypeRearTyreStatus;
         private List<Vehicle> vehicleList;
+        private string selectedVehicle;
+        private List<string> vehicleNoList;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -73,7 +76,25 @@ namespace WheelSpaMobileApp
             {
                 vehicleList = value;
                 OnPropertyChanged();
-            }            
+            }
+        }
+
+        public List<string> VehicleNoList
+        {
+            get
+            {
+                return vehicleNoList;
+            }
+            set
+            {
+                vehicleNoList = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(VehicleNoList)));
+            }
+        }
+
+        public Vehicle SelectedVehicle
+        {
+            get; set;
         }
 
         public ICommand SubmitCommand { get; set; }
@@ -83,9 +104,10 @@ namespace WheelSpaMobileApp
             restServices = new RestServices();
             Task.Run(async () =>
             {
-                vehicleList = await restServices.GetVehicleList("orqg9711");
+                VehicleList = await restServices.GetVehicleList("orqg9711");
+                VehicleNoList = VehicleList.Select(l => l.VehicleNo).ToList();
             });
-            
+
             SameTyre = new Tyre();
             DifferentTypeTyre = new DifferentTypeTyre
             {

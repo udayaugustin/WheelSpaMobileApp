@@ -12,7 +12,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Label Text="Select Vehcile" Grid.Column="0" TextColor="#2699FB" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-                    <Picker HeightRequest="50" ItemsSource="{Binding TyreStatusList}" SelectedItem="{Binding SameTypeTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
+                    <Picker HeightRequest="50" ItemsSource="{Binding VehicleNoList}" SelectedItem="{Binding SameTypeTyreStatus, Mode=TwoWay}" TextColor="#2699FB" WidthRequest="70" Margin="20,0,20,10" Grid.Column="1" Title="Select From DropDown">
                     </Picker>
                 </Grid>
                 <Grid>
@@ -31,6 +31,7 @@
                 <custom:CustomEntry Text="{Binding SameTyre.TyreLife}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Tyre Life Remaining"/>
                 <custom:CustomEntry Text="{Binding SameTyre.DateOfPurchase}" Style="{StaticResource TyreDetailCustomEntryStyle}"  Placeholder="Date of purchase" />
                 <Button Image="arrow" Command="{Binding SubmitCommand}" CommandParameter="Same" Style="{StaticResource ProfieNxtBtStyle}"/>
+                <Button Clicked="Handle_Clicked" Text="Click"/>
             </StackLayout>
         </ScrollView>
     </ContentPage>

@@ -63,10 +63,9 @@ namespace WheelSpaMobileApp
         public async Task<List<Vehicle>> GetVehicleList(string authToken)
         {
             var content = await httpClient.GetStringAsync(BaseUrl + "vehicle/get?AuthToken=" + authToken);
-            System.Diagnostics.Debug.WriteLine(content);
-            var vehicleList = JsonConvert.DeserializeObject<List<Vehicle>>(content);
-            System.Diagnostics.Debug.WriteLine(vehicleList);
-            return vehicleList;
+            var vehicleInfo = JsonConvert.DeserializeObject<ResultDataVehicleList>(content);
+
+            return vehicleInfo.VehicleDetails;
         }
     }
 }

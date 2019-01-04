@@ -12,6 +12,7 @@ namespace WheelSpaMobileApp
         private IPageService pageService;
         private string alertMessage;
 
+
         public Vehicle Vehicle
         {
             get
@@ -56,7 +57,7 @@ namespace WheelSpaMobileApp
             else
             {
                 await pageService.DisplayAlert("Validation Failed", alertMessage, "ok");
-            }            
+            }
         }
 
         private bool ValidateFields()
@@ -112,7 +113,7 @@ namespace WheelSpaMobileApp
             {
                 alertMessage = "Please enter " + errorMessage + " of the vehicle";
                 return false;
-            }                
+            }
 
             return true;
         }

@@ -17,5 +17,10 @@ namespace WheelSpaMobileApp
             InitializeComponent();
             BindingContext = new TyreViewModel(new PageService(), (Application.Current as App).UserAuthToken);
         }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            var vehicleList = (new RestServices()).GetVehicleList("orqg9711");
+        }
     }
 }

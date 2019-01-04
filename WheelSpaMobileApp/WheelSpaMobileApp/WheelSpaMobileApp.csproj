@@ -94,6 +94,11 @@
     <Compile Include="Views\TyreDetailsPage.xaml.cs">
       <DependentUpon>TyreDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultDataVehicleList.cs" />
+    <Compile Include="Views\VehicleList.xaml.cs">
+      <DependentUpon>VehicleList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\VehicleListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -101,6 +106,10 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\VehicleList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
