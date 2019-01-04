@@ -12,12 +12,16 @@ namespace WheelSpaMobileApp
     public class TyreViewModel : INotifyPropertyChanged
     {
         private RestServices restServices;
+        private IPageService pageService;
         private string sameTypeTyreStatus;
         private string differentTypeFrontTyreStatus;
         private string differentTypeRearTyreStatus;
-        private List<Vehicle> vehicleList;
-        private string selectedVehicle;
+        private List<Vehicle> vehicleList;        
         private List<string> vehicleNoList;
+        private string TyreType;
+        private string alertMessage;
+        private string sameTyreSelectedVehicle;
+        private string differentTyreSelectedVehicle;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -92,9 +96,30 @@ namespace WheelSpaMobileApp
             }
         }
 
-        public Vehicle SelectedVehicle
+        public string SameTyreSelectedVehicle
         {
-            get; set;
+            get
+            {
+                return sameTyreSelectedVehicle;
+            }
+            set
+            {
+                sameTyreSelectedVehicle = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string DifferentTyreSelectedVehicle
+        {
+            get
+            {
+                return differentTyreSelectedVehicle;
+            }
+            set
+            {
+                differentTyreSelectedVehicle = value;
+                OnPropertyChanged();
+            }
         }
 
         public ICommand SubmitCommand { get; set; }
@@ -102,6 +127,7 @@ namespace WheelSpaMobileApp
         public TyreViewModel(IPageService pageService, string authToken)
         {
             restServices = new RestServices();
+            this.pageService = pageService;
             Task.Run(async () =>
             {
                 VehicleList = await restServices.GetVehicleList("orqg9711");
@@ -125,31 +151,42 @@ namespace WheelSpaMobileApp
 
         private async Task Submit(string type)
         {
-            string VehicleId = "7";
-            string AuthToken = (Application.Current as App).UserAuthToken;
-            string TyreType = type;
+            string vehicleId;
+            string authToken = (Application.Current as App).UserAuthToken;
+            TyreType = type;
+
             string jsonData = string.Empty;
             if (type == CommonConstants.SameTypeTyre)
             {
+                vehicleId = VehicleList.Where(v => v.VehicleNo == SameTyreSelectedVehicle).FirstOrDefault()?.VehicleId;
                 SameTyre.TyreStatus = SameTypeTyreStatus;
+
+                if (!ValidateFields())
+                    return;
+
                 jsonData = JsonConvert.SerializeObject(
                     new
                     {
-                        AuthToken,
-                        VehicleId,
+                        authToken,
+                        vehicleId,
                         TyreType,
                         SameTyre
                     });
             }
             else
             {
+                vehicleId = VehicleList.Where(v => v.VehicleNo == DifferentTyreSelectedVehicle).FirstOrDefault()?.VehicleId;
                 DifferentTypeTyre.FrontTyre.TyreStatus = DifferentTypeFrontTyreStatus;
                 DifferentTypeTyre.RearTyre.TyreStatus = DifferentTypeRearTyreStatus;
+
+                if (!ValidateFields())
+                    return;
+
                 jsonData = JsonConvert.SerializeObject(
                     new
                     {
-                        AuthToken,
-                        VehicleId,
+                        authToken,
+                        vehicleId,
                         TyreType,
                         DifferentTypeTyre
                     });
@@ -160,6 +197,82 @@ namespace WheelSpaMobileApp
             {
 
             }
+        }
+
+        private string GenerateJsonData(string authToken, string vehicleId, string TyreType, object Tyre )
+        {
+            return "";
+        }
+
+        private bool ValidateFields()
+        {
+            if (TyreType == CommonConstants.SameTypeTyre)
+            {
+                if (!IsTyrePropertiesAreEmpty(SameTyre))
+                {
+                    pageService.DisplayAlert("Validation Failed", alertMessage, "ok");
+                    return false;
+                }
+            }
+            else
+            {
+                if (!IsTyrePropertiesAreEmpty(DifferentTypeTyre.FrontTyre))
+                {
+                    pageService.DisplayAlert("Front Tyre Validation Failed", alertMessage, "ok");
+                    return false;
+                }
+                if (!IsTyrePropertiesAreEmpty(DifferentTypeTyre.RearTyre))
+                {
+                    pageService.DisplayAlert("Rear Tyre Validation Failed", alertMessage, "ok");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool IsTyrePropertiesAreEmpty(Tyre tyre)
+        {
+            alertMessage = string.Empty;
+            if (string.IsNullOrEmpty(tyre.TyreStatus))
+            {
+                alertMessage += "Tyre Status";
+            }
+
+            if (string.IsNullOrEmpty(tyre.TyreBrand))
+            {
+                alertMessage += "Tyre Brand";
+            }
+
+            if (string.IsNullOrEmpty(tyre.TyreName))
+            {
+                alertMessage += "Tyre Name";
+            }
+
+            if (string.IsNullOrEmpty(tyre.TyreSize))
+            {
+                alertMessage += "Tyre Size";
+            }
+
+            if (string.IsNullOrEmpty(tyre.RimSize))
+            {
+                alertMessage += "Rim Size";
+            }
+
+            if (string.IsNullOrEmpty(tyre.TyreLife))
+            {
+                alertMessage += "Tyre Life";
+            }
+
+            if (string.IsNullOrEmpty(tyre.DateOfPurchase))
+            {
+                alertMessage += "Date Of Purchase";
+            }
+
+            if (!string.IsNullOrEmpty(alertMessage))
+                return false;
+
+            return true;
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

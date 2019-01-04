@@ -26,11 +26,12 @@ namespace WheelSpaMobileApp
             {
                 MenuItems = new ObservableCollection<TyreDetailMenuItem>(new[]
                 {
+                    new TyreDetailMenuItem { Id = 4, Title = "Vehicle List", Icon="vehicletyre" },
+                    new TyreDetailMenuItem { Id = 4, Title = "Vehicle Tyres", Icon="vehicletyre" },
                     new TyreDetailMenuItem { Id = 0, Title = "Service History", Icon="service"},
                     new TyreDetailMenuItem { Id = 1, Title = "Service Offered", Icon="offer" },
                     new TyreDetailMenuItem { Id = 2, Title = "Appoinment", Icon="appoinment" },
-                    new TyreDetailMenuItem { Id = 3, Title = "Notifications", Icon="notification" },
-                    new TyreDetailMenuItem { Id = 4, Title = "Vehicle Tyres", Icon="vehicletyre" },
+                    new TyreDetailMenuItem { Id = 3, Title = "Notifications", Icon="notification" },                    
                     new TyreDetailMenuItem { Id = 5, Title = "Feedback", Icon="feedback" },
                     new TyreDetailMenuItem { Id = 6, Title = "Settings", Icon="settings" },
                 });

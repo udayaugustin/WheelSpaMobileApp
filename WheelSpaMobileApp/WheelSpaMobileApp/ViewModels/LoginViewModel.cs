@@ -1,7 +1,6 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
-using WheelSpaMobileApp.Views;
 
 namespace WheelSpaMobileApp
 {
@@ -48,7 +47,7 @@ namespace WheelSpaMobileApp
 
         private async Task GoToServicePage()
         {
-            await pageService.PushAsync(new Services());
+            await pageService.UpdateNavigationPage(new Services());
         }
 
         private async Task NaviagateToRegisterPage()

@@ -2,6 +2,8 @@
 {
     public class Vehicle
     {
+        public string VehicleId { get; set; }
+
         public string VehicleNo { get; set; }
 
         public string VehicleName { get; set; }
