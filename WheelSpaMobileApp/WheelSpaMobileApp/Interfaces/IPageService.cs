@@ -13,5 +13,7 @@ namespace WheelSpaMobileApp
         Task DisplayAlert(string title, string message, string cancel);
 
         Task UpdateNavigationPage(Page page);
+
+        void HideHamburgerMenu();
     }
 }

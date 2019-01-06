@@ -35,10 +35,15 @@ namespace WheelSpaMobileApp
 
         public async Task UpdateNavigationPage(Page page)
         {
-            var app = (Application.Current as App);            
+            var app = (Application.Current as App);
             var homePage = app.NavigationPage.Navigation.NavigationStack.First();
             app.NavigationPage.Navigation.InsertPageBefore(page, homePage);
             await app.NavigationPage.PopToRootAsync(false);
+        }
+
+        public void HideHamburgerMenu()
+        {
+            (Application.Current.MainPage as MasterRootPage).IsPresented = false;
         }
     }
 }

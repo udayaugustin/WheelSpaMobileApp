@@ -2,15 +2,5 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WheelSpaMobileApp.MasterRootPage"
-             xmlns:pages="clr-namespace:WheelSpaMobileApp" Title="RK Tyre Point">
-    <MasterDetailPage.Master>
-        <pages:MasterMenuPage x:Name="MasterPage" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-                <pages:MasterDetailPage />
-            </x:Arguments>
-        </NavigationPage>
-    </MasterDetailPage.Detail>
+             xmlns:pages="clr-namespace:WheelSpaMobileApp" Title="RK Tyre Point">    
 </MasterDetailPage>

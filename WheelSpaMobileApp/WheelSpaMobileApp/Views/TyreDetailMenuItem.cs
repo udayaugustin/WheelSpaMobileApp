@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WheelSpaMobileApp
 {
 
     public class TyreDetailMenuItem
     {
-        public TyreDetailMenuItem()
-        {
-            TargetType = typeof(MasterDetailPage);
-        }
         public int Id { get; set; }
         public string Title { get; set; }
 
