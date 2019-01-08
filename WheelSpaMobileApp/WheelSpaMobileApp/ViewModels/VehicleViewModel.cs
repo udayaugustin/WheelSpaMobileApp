@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -50,7 +49,7 @@ namespace WheelSpaMobileApp
 
                 if (result?.Status == "success")
                 {
-                    await pageService.UpdateNavigationPage(new Services());
+                    await pageService.UpdateNavigationPage(new VehicleList());
                 }
             }
             else

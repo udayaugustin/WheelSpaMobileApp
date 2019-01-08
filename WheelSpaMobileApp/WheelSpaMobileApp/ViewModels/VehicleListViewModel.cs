@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
 {
@@ -10,10 +12,11 @@ namespace WheelSpaMobileApp
         private IPageService pageService;
         private RestServices restServices;
         private List<Vehicle> vehicleList;
-        private List<string> vehicleNoList;
         private Vehicle selectedVehicle;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand AddNewVehicle{ get; set; }
 
         public List<Vehicle> VehicleList
         {
@@ -28,15 +31,37 @@ namespace WheelSpaMobileApp
             }
         }
 
-        public Vehicle SelectedVehicle { get; set; }
+        public Vehicle SelectedVehicle
+        {
+            get
+            {
+                return selectedVehicle;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    selectedVehicle = value;
+                    GoToVehicleManageView(selectedVehicle);
+                }
+            }
+        }
 
         public VehicleListViewModel(IPageService pageService)
         {
             this.pageService = pageService;
-            Task.Run(async () =>
-            {
-                VehicleList = await restServices.GetVehicleList("orqg9711");
-            });
+            restServices = new RestServices();
+            AddNewVehicle = new Command<Vehicle>((v) => GoToVehicleManageView(new Vehicle()));            
         }
+
+        public async Task GetVehicleList()
+        {
+            VehicleList = await restServices.GetVehicleList((Application.Current as App).UserAuthToken);
+        }
+
+        private void GoToVehicleManageView(Vehicle vehicle)
+        {
+            pageService.PushAsync(new AddVechicleInfo(vehicle));
+        }        
     }
 }

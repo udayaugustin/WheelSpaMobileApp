@@ -1,13 +1,18 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace WheelSpaMobileApp
 {
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
         private IPageService pageService;
         private RestServices restServices;
+        private bool isLoading;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand AuthenticateViaFacebook { get; set; }
 
@@ -16,6 +21,19 @@ namespace WheelSpaMobileApp
         public ICommand GoToRegisterPage { get; set; }
 
         public User User { get; set; }
+
+        public bool IsLoading
+        {
+            get
+            {
+                return isLoading;
+            }
+            set
+            {
+                isLoading = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsLoading)));
+            }
+        }
 
 
         public LoginViewModel(IPageService pageService)
@@ -31,24 +49,29 @@ namespace WheelSpaMobileApp
 
         private async Task FacebookLoginAsync()
         {
-            await pageService.PushAsync(new FacebookProfileCsPage(pageService));            
+            await pageService.PushAsync(new FacebookProfileCsPage(pageService));
         }
 
         private async Task AuthenticateUser()
         {
+            IsLoading = true;
             var result = await restServices.AuthenticateUserViaManual(User);
-            if (result.Status == "Success")
+            isLoading = false;
+            if (string.Equals(result.Status, CommonConstants.SuccessStatus, StringComparison.OrdinalIgnoreCase))
             {
                 (App.Current as App).UserAuthToken = result.UserDetails.AuthToken;
                 (App.Current as App).LoggedInUserId = result.UserDetails.UserId;
+                await GoToServicePage();
             }
-
-            await GoToServicePage();
+            else
+            {
+                await pageService.DisplayAlert("Failed", "Username or password is wrong", "Ok");
+            }
         }
 
         private async Task GoToServicePage()
         {
-            await pageService.UpdateNavigationPage(new Services());
+            await pageService.UpdateNavigationPage(new VehicleList());
         }
 
         private async Task NaviagateToRegisterPage()

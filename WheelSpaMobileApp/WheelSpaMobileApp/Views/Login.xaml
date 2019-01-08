@@ -24,6 +24,7 @@
             <control:ImageEntry Style="{StaticResource ImageEntryStyle}" Image="person_placeholder"  Placeholder="Username" x:Name="Username" Text="{Binding User.UserName}" Grid.Row="1"  Grid.Column="0"  Grid.ColumnSpan="3" />
             <control:ImageEntry  Image="password_placeholder" Margin="20,0,20,0" Placeholder="Password"  x:Name="Password" Text="{Binding User.Password}" TextColor="#2699FB" IsPassword="True" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="3"/>
             <Button Text="Login" Style="{StaticResource LoginButtonStyle}" Command="{Binding AuthenticateUserViaManual}" Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3"/>
+            <ActivityIndicator  Grid.Row="3" Grid.ColumnSpan="3" IsVisible="{Binding IsLoading}" IsRunning="{Binding IsLoading}" VerticalOptions="End" HorizontalOptions="Center"/>
             <Label Text="Continue With"  Style="{StaticResource ContinueLabelStyle}" Grid.Row="4"  Grid.Column="0" Grid.ColumnSpan="3"/>
             <!--<controls:CircleImage Source="icon.png" Aspect="AspectFill" HeightRequest="80"  Grid.Row="5"  Grid.Column="0" />-->
             <controls:CircleImage Source="facebook" Style="{StaticResource CircleImageStyle}"  Grid.Row="5"  Grid.Column="1">

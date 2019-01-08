@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace WheelSpaMobileApp
@@ -11,7 +11,13 @@ namespace WheelSpaMobileApp
         {
             InitializeComponent();
             BindingContext = new VehicleListViewModel(new PageService());
+        }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await (BindingContext as VehicleListViewModel).GetVehicleList();
         }
     }
 }
