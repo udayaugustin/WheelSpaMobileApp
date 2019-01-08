@@ -6,6 +6,8 @@ namespace WheelSpaMobileApp
     public partial class App : Application
     {
         private const string AuthToken = "AuthToken";
+        private const string UserId = "UserId";
+
         public NavigationPage NavigationPage { get; set; }
 
 
@@ -63,6 +65,25 @@ namespace WheelSpaMobileApp
             set
             {
                 Properties[AuthToken] = value;
+                Current.SavePropertiesAsync();
+            }
+        }
+
+        public string LoggedInUserId
+        {
+            get
+            {
+                if (Properties.ContainsKey(UserId))
+                {
+                    return Properties[UserId]?.ToString();
+                }
+
+                return string.Empty;
+            }
+
+            set
+            {
+                Properties[UserId] = value;
                 Current.SavePropertiesAsync();
             }
         }

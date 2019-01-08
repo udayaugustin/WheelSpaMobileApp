@@ -15,7 +15,9 @@ namespace WheelSpaMobileApp
         public AddVechicleInfo(Vehicle vehicle)
         {
             InitializeComponent();
-            BindingContext = new VehicleViewModel(new PageService(), vehicle);
+
+            var userId = (Application.Current as App).LoggedInUserId;
+            BindingContext = new VehicleViewModel(new PageService(), vehicle, userId);
         }
     }
 }

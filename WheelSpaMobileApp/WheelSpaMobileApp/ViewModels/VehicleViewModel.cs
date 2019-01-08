@@ -11,8 +11,7 @@ namespace WheelSpaMobileApp
         private RestServices restServices;
         private IPageService pageService;
         private string alertMessage;
-
-
+        
         public Vehicle Vehicle
         {
             get
@@ -31,14 +30,14 @@ namespace WheelSpaMobileApp
             set;
         }
 
-        public VehicleViewModel(IPageService pageService, Vehicle vehicle)
+        public VehicleViewModel(IPageService pageService, Vehicle vehicle, string userId)
         {
             restServices = new RestServices();
             this.pageService = pageService;
             this.vehicle = vehicle;
             this.vehicle.VehicleType = "Bike";
             this.vehicle.VehicleModel = "2018";
-            this.vehicle.UserId = "1";
+            this.vehicle.UserId = (Application.Current as App).LoggedInUserId;
 
             SubmitCommand = new Command(async () => await AddVehcicle());
         }

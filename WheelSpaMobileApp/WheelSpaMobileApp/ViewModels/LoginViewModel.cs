@@ -40,6 +40,7 @@ namespace WheelSpaMobileApp
             if (result.Status == "Success")
             {
                 (App.Current as App).UserAuthToken = result.UserDetails.AuthToken;
+                (App.Current as App).LoggedInUserId = result.UserDetails.UserId;
             }
 
             await GoToServicePage();
