@@ -35,8 +35,7 @@ namespace WheelSpaMobileApp
             this.pageService = pageService;
             this.vehicle = vehicle;
             this.vehicle.VehicleType = "Bike";
-            this.vehicle.VehicleModel = "2018";
-            this.vehicle.UserId = (Application.Current as App).LoggedInUserId;
+            this.vehicle.VehicleModel = "2018";            
 
             SubmitCommand = new Command(async () => await AddVehcicle());
         }
@@ -45,6 +44,7 @@ namespace WheelSpaMobileApp
         {
             if (ValidateFields())
             {
+                vehicle.UserId = (Application.Current as App).LoggedInUserId;
                 var result = await restServices.AddVehicle(vehicle);
 
                 if (result?.Status == "success")

@@ -67,5 +67,12 @@ namespace WheelSpaMobileApp
 
             return vehicleInfo.VehicleDetails;
         }
+
+        public async Task<ResultData> GetUserDetail(string authToken)
+        {
+            var content = await httpClient.GetStringAsync(BaseUrl + "user/get?AuthToken=" + authToken);
+            
+            return JsonConvert.DeserializeObject<ResultData>(content);
+        }
     }
 }
