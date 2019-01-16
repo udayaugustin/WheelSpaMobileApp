@@ -130,7 +130,7 @@ namespace WheelSpaMobileApp
             this.pageService = pageService;
             Task.Run(async () =>
             {
-                VehicleList = await restServices.GetVehicleList("orqg9711");
+                VehicleList = await restServices.GetVehicleList((Application.Current as App).UserAuthToken);
                 VehicleNoList = VehicleList.Select(l => l.VehicleNo).ToList();
             });
 

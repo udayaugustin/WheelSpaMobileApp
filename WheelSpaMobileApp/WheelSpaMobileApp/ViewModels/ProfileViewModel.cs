@@ -53,7 +53,7 @@ namespace WheelSpaMobileApp
                 ResultData result = await restServices.AddUser(User);
                 if (result.Status == "success")
                 {
-                    (Application.Current as App).UserAuthToken = result.AuthToken;
+                    (Application.Current as App).UserAuthToken = result?.UserDetails?.AuthToken;
                     (Application.Current as App).LoggedInUserId = result?.UserDetails?.UserId;
 
                     return true;

@@ -76,13 +76,7 @@ namespace WheelSpaMobileApp
                 if (Properties.ContainsKey(UserId))
                 {
                     return Properties[UserId]?.ToString();
-                }
-                else if (IsUserloggedIn)
-                {
-                    var restServices = new RestServices();
-                    var userInfo = restServices.GetUserDetail(UserAuthToken).GetAwaiter().GetResult();
-                    return LoggedInUserId = userInfo.UserDetails.AuthToken;
-                }
+                }                
 
                 return string.Empty;
             }
